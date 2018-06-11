@@ -10,6 +10,8 @@
 
     <properties>
         <suiteFile>src/test/resources/testng.xml</suiteFile>
+        <browser>chrome</browser>
+        <platform>Windows</platform>
     </properties>
 
     <dependencyManagement>
@@ -37,12 +39,6 @@
             <artifactId>htmlelements-java</artifactId>
             <version>1.18</version>
         </dependency>
-        <dependency>
-            <groupId>WebdriverGrid</groupId>
-            <artifactId>WebdriverGrid</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -64,6 +60,10 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteFile}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <browserName>${browser}</browserName>
+                        <platformName>${platform}</platformName>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
