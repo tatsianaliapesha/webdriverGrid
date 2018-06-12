@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Actions Test" verbose="1">
+
+    <test name="Actions Test">
+        <parameter name="username" value="bhkb.jshcw@gqfozpkzgb.kbk"/>
+        <parameter name="password" value="password1"/>
+        <classes>
+            <class name="com.globoforce.testautomation.mentoring.webdriver.test.scenarios.ActionsTest"/>
+        </classes>
+    </test>
+</suite>

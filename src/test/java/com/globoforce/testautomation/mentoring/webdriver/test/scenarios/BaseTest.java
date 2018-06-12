@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
@@ -24,11 +25,13 @@ public class BaseTest {
         String platform = System.getProperty("platform");
         cap.setPlatform(Platform.fromString(platform));
         driver = new RemoteWebDriver(new URL(this.URL), cap);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @AfterClass
-    public void quiteDriver(){
+    public void quiteDriver() {
         driver.quit();
     }
+
 
 }
